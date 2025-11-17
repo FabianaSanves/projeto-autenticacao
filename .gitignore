@@ -1,0 +1,8 @@
+# Arquivo de variáveis de ambiente
+.env
+
+# Pasta de módulos do Node
+node_modules
+
+# Pasta de código JavaScript compilado
+dist

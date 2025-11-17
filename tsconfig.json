@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ES2020", // Versão moderna do JavaScript
+    "module": "CommonJS", // Sistema de módulos do Node.js
+    "outDir": "./dist", // Onde o código compilado (JavaScript) vai ficar
+    "rootDir": "./src", // Onde o nosso código TypeScript vai ficar
+    "strict": true, // Liga regras mais rígidas, o que é uma boa prática
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"], // Só olhar arquivos dentro da pasta 'src'
+}

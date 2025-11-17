@@ -1,0 +1,86 @@
+# Variável global para o host da nossa API
+@host = http://localhost:3000
+
+###
+# -----------------------------------------------
+# CENÁRIOS DE SUCESSO
+# -----------------------------------------------
+
+### 1. Teste de Login com Sucesso (Suporte)
+# Clica em "Send Request" acima deste texto
+#
+# Esperado: 200 OK
+# Resposta: JSON com os dados do "Usuario do suporte"
+#
+# (Nota: Nós enviamos a senha '123456', o backend
+# vai comparar ela com o HASH que está no banco)
+POST {{host}}/login
+Content-Type: application/json
+
+{
+  "matricula": "suporte123",
+  "senha": "123456"
+}
+
+### 2. Teste de Login com Sucesso (Admin)
+#
+# Esperado: 200 OK
+# Resposta: JSON com os dados do "Admin Coordenador"
+POST {{host}}/login
+Content-Type: application/json
+
+{
+  "matricula": "admin123",
+  "senha": "123456"
+}
+
+
+###
+# -----------------------------------------------
+# CENÁRIOS DE FALHA
+# -----------------------------------------------
+
+### 3. Teste de Login com Falha (Senha Incorreta)
+#
+# Esperado: 401 Unauthorized
+# Resposta: { "message": "Matrícula ou senha inválida." }
+POST {{host}}/login
+Content-Type: application/json
+
+{
+  "matricula": "suporte123",
+  "senha": "senha-errada-123"
+}
+
+
+### 4. Teste de Login com Falha (Usuário Inexistente)
+#
+# Esperado: 401 Unauthorized
+# Resposta: { "message": "Matrícula ou senha inválida." }
+POST {{host}}/login
+Content-Type: application/json
+
+{
+  "matricula": "usuario-que-nao-existe",
+  "senha": "123456"
+}
+
+
+### 5. Teste de Falha (Requisição Mal Formatada - Faltando Senha)
+# Nosso server.ts deve barrar isso.
+#
+# Esperado: 400 Bad Request
+# Resposta: { "message": "Matrícula e senha são obrigatórios." }
+POST {{host}}/login
+Content-Type: application/json
+
+{
+  "matricula": "suporte123"
+}
+
+### 6. Teste de Endpoint Inexistente
+#
+# Esperado: 404 Not Found
+# Resposta: { "message": "Endpoint não encontrado." }
+GET {{host}}/endpoint-qualquer
+Content-Type: application/json
