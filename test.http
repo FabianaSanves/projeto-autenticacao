@@ -1,4 +1,4 @@
-# Variável global para o host da nossa API
+# Variável global para o host da API
 @host = http://localhost:3000
 
 ###
@@ -7,13 +7,8 @@
 # -----------------------------------------------
 
 ### 1. Teste de Login com Sucesso (Suporte)
-# Clica em "Send Request" acima deste texto
-#
 # Esperado: 200 OK
 # Resposta: JSON com os dados do "Usuario do suporte"
-#
-# (Nota: Nós enviamos a senha '123456', o backend
-# vai comparar ela com o HASH que está no banco)
 POST {{host}}/login
 Content-Type: application/json
 
@@ -23,7 +18,6 @@ Content-Type: application/json
 }
 
 ### 2. Teste de Login com Sucesso (Admin)
-#
 # Esperado: 200 OK
 # Resposta: JSON com os dados do "Admin Coordenador"
 POST {{host}}/login
@@ -33,7 +27,6 @@ Content-Type: application/json
   "matricula": "admin123",
   "senha": "123456"
 }
-
 
 ###
 # -----------------------------------------------
