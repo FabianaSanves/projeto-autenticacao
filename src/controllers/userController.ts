@@ -2,7 +2,7 @@ import * as dotenv from 'dotenv';
 dotenv.config(); //carrega as variaveis do .env
 
 import * as http from 'http';
-import { login } from './authService'; //importa a função de login
+import { login } from '../routes/authRoutes'; //importa a função de login
 
 //servidor
 const server = http.createServer(async (req, res) => {

@@ -8,5 +8,5 @@
     "esModuleInterop": true,
     "skipLibCheck": true
   },
-  "include": ["src/**/*"], // Só olhar arquivos dentro da pasta 'src'
+  "include": ["src/**/*", "src/controllers/userController.ts"], // Só olhar arquivos dentro da pasta 'src'
 }

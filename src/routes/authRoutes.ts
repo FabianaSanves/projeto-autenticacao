@@ -1,4 +1,4 @@
-import { query } from "./db"; //importa a conexão do banco de dados
+import { query } from "../config/db"; //importa a conexão do banco de dados
 import * as bcrypt from "bcrypt"; //importa o bcrypt para ler o hash da senha
 
 //Tenta autenticar um usuário com matrícula e senha
