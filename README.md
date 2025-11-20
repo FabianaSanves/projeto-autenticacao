@@ -34,7 +34,7 @@ O projeto foi construído **sem o uso de frameworks web**, utilizando apenas mó
 
 1. **Clone o repositório:**
    ```bash
-   git clone [https://github.com/FabianaSanves/sgi-backend.git](https://github.com/FabianaSanves/sgi-backend.git)
+   git clone https://github.com/FabianaSanves/projeto-autenticacao.git
    cd login-sgi
 
 2.  **Instale as dependências:**
